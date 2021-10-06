@@ -29,13 +29,111 @@ namespace Badanie
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lImie = new System.Windows.Forms.Label();
+            this.lBadania = new System.Windows.Forms.Label();
+            this.lData = new System.Windows.Forms.Label();
+            this.tbImie = new System.Windows.Forms.TextBox();
+            this.tbBadania = new System.Windows.Forms.TextBox();
+            this.tpData_Badania = new System.Windows.Forms.DateTimePicker();
+            this.tpAktualna_Data = new System.Windows.Forms.DateTimePicker();
+            this.tpAktualna_Godzina = new System.Windows.Forms.DateTimePicker();
+            this.SuspendLayout();
+            // 
+            // lImie
+            // 
+            this.lImie.AutoSize = true;
+            this.lImie.Location = new System.Drawing.Point(37, 135);
+            this.lImie.Name = "lImie";
+            this.lImie.Size = new System.Drawing.Size(63, 15);
+            this.lImie.TabIndex = 0;
+            this.lImie.Text = "Podaj Imie";
+            this.lImie.Click += new System.EventHandler(this.lImie_Click);
+            // 
+            // lBadania
+            // 
+            this.lBadania.AutoSize = true;
+            this.lBadania.Location = new System.Drawing.Point(37, 168);
+            this.lBadania.Name = "lBadania";
+            this.lBadania.Size = new System.Drawing.Size(87, 15);
+            this.lBadania.TabIndex = 1;
+            this.lBadania.Text = "Nazwa badania";
+            // 
+            // lData
+            // 
+            this.lData.AutoSize = true;
+            this.lData.Location = new System.Drawing.Point(37, 201);
+            this.lData.Name = "lData";
+            this.lData.Size = new System.Drawing.Size(108, 15);
+            this.lData.TabIndex = 2;
+            this.lData.Text = "Podaj date badania";
+            this.lData.Click += new System.EventHandler(this.lData_Click);
+            // 
+            // tbImie
+            // 
+            this.tbImie.Location = new System.Drawing.Point(196, 127);
+            this.tbImie.Name = "tbImie";
+            this.tbImie.Size = new System.Drawing.Size(100, 23);
+            this.tbImie.TabIndex = 3;
+            // 
+            // tbBadania
+            // 
+            this.tbBadania.Location = new System.Drawing.Point(196, 160);
+            this.tbBadania.Name = "tbBadania";
+            this.tbBadania.Size = new System.Drawing.Size(100, 23);
+            this.tbBadania.TabIndex = 4;
+            // 
+            // tpData_Badania
+            // 
+            this.tpData_Badania.Location = new System.Drawing.Point(196, 193);
+            this.tpData_Badania.Name = "tpData_Badania";
+            this.tpData_Badania.Size = new System.Drawing.Size(200, 23);
+            this.tpData_Badania.TabIndex = 5;
+            // 
+            // tpAktualna_Data
+            // 
+            this.tpAktualna_Data.Location = new System.Drawing.Point(251, 23);
+            this.tpAktualna_Data.Name = "tpAktualna_Data";
+            this.tpAktualna_Data.Size = new System.Drawing.Size(200, 23);
+            this.tpAktualna_Data.TabIndex = 6;
+            // 
+            // tpAktualna_Godzina
+            // 
+            this.tpAktualna_Godzina.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.tpAktualna_Godzina.Location = new System.Drawing.Point(303, 52);
+            this.tpAktualna_Godzina.Name = "tpAktualna_Godzina";
+            this.tpAktualna_Godzina.Size = new System.Drawing.Size(76, 23);
+            this.tpAktualna_Godzina.TabIndex = 7;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tpAktualna_Godzina);
+            this.Controls.Add(this.tpAktualna_Data);
+            this.Controls.Add(this.tpData_Badania);
+            this.Controls.Add(this.tbBadania);
+            this.Controls.Add(this.tbImie);
+            this.Controls.Add(this.lData);
+            this.Controls.Add(this.lBadania);
+            this.Controls.Add(this.lImie);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lImie;
+        private System.Windows.Forms.Label lBadania;
+        private System.Windows.Forms.Label lData;
+        private System.Windows.Forms.TextBox tbImie;
+        private System.Windows.Forms.TextBox tbBadania;
+        private System.Windows.Forms.DateTimePicker tpData_Badania;
+        private System.Windows.Forms.DateTimePicker tpAktualna_Data;
+        private System.Windows.Forms.DateTimePicker tpAktualna_Godzina;
     }
 }
 

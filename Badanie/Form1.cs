@@ -17,5 +17,14 @@ namespace Badanie
             InitializeComponent();
         }
 
+        private void lData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lImie_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
