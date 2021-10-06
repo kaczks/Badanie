@@ -62,5 +62,13 @@ namespace Badanie
             public string Nazwa_Badania;
             public DateTime Data_Badania;
         }
+        NFZ pacjet;
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            tbImie.Text = pacjet.Imie;
+            tbBadania.Text = pacjet.Nazwa_Badania;
+            tpData_Badania.Value = pacjet.Data_Badania;
+
+        }
     }
 }

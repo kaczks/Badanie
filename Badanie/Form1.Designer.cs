@@ -39,6 +39,7 @@ namespace Badanie
             this.tpAktualna_Data = new System.Windows.Forms.DateTimePicker();
             this.tpAktualna_Godzina = new System.Windows.Forms.DateTimePicker();
             this.refresh = new System.Windows.Forms.Timer(this.components);
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lImie
@@ -118,11 +119,22 @@ namespace Badanie
             this.refresh.Interval = 10000;
             this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
             // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(229, 261);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(122, 23);
+            this.btnDodaj.TabIndex = 8;
+            this.btnDodaj.Text = "Dodaj wizyte";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.tpAktualna_Godzina);
             this.Controls.Add(this.tpAktualna_Data);
             this.Controls.Add(this.tpData_Badania);
@@ -149,6 +161,7 @@ namespace Badanie
         private System.Windows.Forms.DateTimePicker tpAktualna_Data;
         private System.Windows.Forms.DateTimePicker tpAktualna_Godzina;
         private System.Windows.Forms.Timer refresh;
+        private System.Windows.Forms.Button btnDodaj;
     }
 }
 
