@@ -31,12 +31,12 @@ namespace Badanie
 
         private void tpAktualna_Data_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tpAktualna_Godzina_ValueChanged(object sender, EventArgs e)
         {
-         
+
         }
         public void Godzina()
         {
@@ -53,8 +53,14 @@ namespace Badanie
 
         private void refresh_Tick(object sender, EventArgs e)
         {
-
             Godzina();
+            Dzien();
+        }
+        struct NFZ
+        {
+            public string Imie;
+            public string Nazwa_Badania;
+            public string Data_Badania;
         }
     }
 }
