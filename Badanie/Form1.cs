@@ -60,7 +60,7 @@ namespace Badanie
         {
             public string Imie;
             public string Nazwa_Badania;
-            public string Data_Badania;
+            public DateTime Data_Badania;
         }
     }
 }
