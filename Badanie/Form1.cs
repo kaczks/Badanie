@@ -15,6 +15,7 @@ namespace Badanie
         public Form1()
         {
             InitializeComponent();
+            Godzina();
         }
 
         private void lData_Click(object sender, EventArgs e)
@@ -25,6 +26,23 @@ namespace Badanie
         private void lImie_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tpAktualna_Data_ValueChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void tpAktualna_Godzina_ValueChanged(object sender, EventArgs e)
+        {
+         
+        }
+        public void Godzina()
+        {
+           
+            tpAktualna_Godzina.Format = DateTimePickerFormat.Custom;
+            tpAktualna_Godzina.CustomFormat = "hh:mm";
+            
         }
     }
 }

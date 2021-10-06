@@ -91,18 +91,24 @@ namespace Badanie
             // 
             // tpAktualna_Data
             // 
+            this.tpAktualna_Data.Enabled = false;
             this.tpAktualna_Data.Location = new System.Drawing.Point(251, 23);
             this.tpAktualna_Data.Name = "tpAktualna_Data";
             this.tpAktualna_Data.Size = new System.Drawing.Size(200, 23);
             this.tpAktualna_Data.TabIndex = 6;
+            this.tpAktualna_Data.Value = new System.DateTime(2021, 10, 6, 0, 0, 0, 0);
+            this.tpAktualna_Data.ValueChanged += new System.EventHandler(this.tpAktualna_Data_ValueChanged);
             // 
             // tpAktualna_Godzina
             // 
-            this.tpAktualna_Godzina.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.tpAktualna_Godzina.Enabled = false;
+            this.tpAktualna_Godzina.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tpAktualna_Godzina.Location = new System.Drawing.Point(303, 52);
             this.tpAktualna_Godzina.Name = "tpAktualna_Godzina";
             this.tpAktualna_Godzina.Size = new System.Drawing.Size(76, 23);
             this.tpAktualna_Godzina.TabIndex = 7;
+            this.tpAktualna_Godzina.Value = new System.DateTime(2021, 10, 6, 12, 19, 0, 0);
+            this.tpAktualna_Godzina.ValueChanged += new System.EventHandler(this.tpAktualna_Godzina_ValueChanged);
             // 
             // Form1
             // 
