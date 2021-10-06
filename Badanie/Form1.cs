@@ -16,6 +16,7 @@ namespace Badanie
         {
             InitializeComponent();
             Godzina();
+            Dzien();
         }
 
         private void lData_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Badanie
 
         private void tpAktualna_Data_ValueChanged(object sender, EventArgs e)
         {
-       
+            
         }
 
         private void tpAktualna_Godzina_ValueChanged(object sender, EventArgs e)
@@ -39,10 +40,15 @@ namespace Badanie
         }
         public void Godzina()
         {
-           
+            DateTime time = DateTime.Now;
             tpAktualna_Godzina.Format = DateTimePickerFormat.Custom;
             tpAktualna_Godzina.CustomFormat = "hh:mm";
-            
+            tpAktualna_Godzina.Value = time;
+        }
+        public void Dzien()
+        {
+            DateTime thisDay = DateTime.Today;
+            tpAktualna_Data.Value = thisDay;
         }
     }
 }
