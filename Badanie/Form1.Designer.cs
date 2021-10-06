@@ -29,6 +29,7 @@ namespace Badanie
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lImie = new System.Windows.Forms.Label();
             this.lBadania = new System.Windows.Forms.Label();
             this.lData = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@ namespace Badanie
             this.tpData_Badania = new System.Windows.Forms.DateTimePicker();
             this.tpAktualna_Data = new System.Windows.Forms.DateTimePicker();
             this.tpAktualna_Godzina = new System.Windows.Forms.DateTimePicker();
+            this.refresh = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lImie
@@ -110,6 +112,12 @@ namespace Badanie
             this.tpAktualna_Godzina.Value = new System.DateTime(2021, 10, 6, 12, 19, 0, 0);
             this.tpAktualna_Godzina.ValueChanged += new System.EventHandler(this.tpAktualna_Godzina_ValueChanged);
             // 
+            // refresh
+            // 
+            this.refresh.Enabled = true;
+            this.refresh.Interval = 10000;
+            this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -140,6 +148,7 @@ namespace Badanie
         private System.Windows.Forms.DateTimePicker tpData_Badania;
         private System.Windows.Forms.DateTimePicker tpAktualna_Data;
         private System.Windows.Forms.DateTimePicker tpAktualna_Godzina;
+        private System.Windows.Forms.Timer refresh;
     }
 }
 

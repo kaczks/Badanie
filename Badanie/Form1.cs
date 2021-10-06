@@ -42,13 +42,19 @@ namespace Badanie
         {
             DateTime time = DateTime.Now;
             tpAktualna_Godzina.Format = DateTimePickerFormat.Custom;
-            tpAktualna_Godzina.CustomFormat = "hh:mm";
+            tpAktualna_Godzina.CustomFormat = "HH:mm";
             tpAktualna_Godzina.Value = time;
         }
         public void Dzien()
         {
             DateTime thisDay = DateTime.Today;
             tpAktualna_Data.Value = thisDay;
+        }
+
+        private void refresh_Tick(object sender, EventArgs e)
+        {
+
+            Godzina();
         }
     }
 }
