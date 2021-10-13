@@ -65,9 +65,14 @@ namespace Badanie
         NFZ pacjet;
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            tbImie.Text = pacjet.Imie;
-            tbBadania.Text = pacjet.Nazwa_Badania;
-            tpData_Badania.Value = pacjet.Data_Badania;
+            pacjet.Imie = tbImie.Text;
+            pacjet.Nazwa_Badania = tbBadania.Text;
+            pacjet.Data_Badania = tpData_Badania.Value;
+
+            Imie_label.Text = pacjet.Imie;
+            Badanie_label.Text = pacjet.Nazwa_Badania;
+            tp_Badania.Value = pacjet.Data_Badania;
+            
 
         }
     }

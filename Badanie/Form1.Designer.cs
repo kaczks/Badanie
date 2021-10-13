@@ -40,6 +40,9 @@ namespace Badanie
             this.tpAktualna_Godzina = new System.Windows.Forms.DateTimePicker();
             this.refresh = new System.Windows.Forms.Timer(this.components);
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.Imie_label = new System.Windows.Forms.Label();
+            this.Badanie_label = new System.Windows.Forms.Label();
+            this.tp_Badania = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lImie
@@ -129,11 +132,40 @@ namespace Badanie
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // Imie_label
+            // 
+            this.Imie_label.AutoSize = true;
+            this.Imie_label.Location = new System.Drawing.Point(573, 127);
+            this.Imie_label.Name = "Imie_label";
+            this.Imie_label.Size = new System.Drawing.Size(68, 15);
+            this.Imie_label.TabIndex = 9;
+            this.Imie_label.Text = "Imie klienta";
+            // 
+            // Badanie_label
+            // 
+            this.Badanie_label.AutoSize = true;
+            this.Badanie_label.Location = new System.Drawing.Point(573, 160);
+            this.Badanie_label.Name = "Badanie_label";
+            this.Badanie_label.Size = new System.Drawing.Size(87, 15);
+            this.Badanie_label.TabIndex = 10;
+            this.Badanie_label.Text = "Nazwa badania";
+            // 
+            // tp_Badania
+            // 
+            this.tp_Badania.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tp_Badania.Location = new System.Drawing.Point(573, 193);
+            this.tp_Badania.Name = "tp_Badania";
+            this.tp_Badania.Size = new System.Drawing.Size(67, 23);
+            this.tp_Badania.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tp_Badania);
+            this.Controls.Add(this.Badanie_label);
+            this.Controls.Add(this.Imie_label);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.tpAktualna_Godzina);
             this.Controls.Add(this.tpAktualna_Data);
@@ -162,6 +194,9 @@ namespace Badanie
         private System.Windows.Forms.DateTimePicker tpAktualna_Godzina;
         private System.Windows.Forms.Timer refresh;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Label Imie_label;
+        private System.Windows.Forms.Label Badanie_label;
+        private System.Windows.Forms.DateTimePicker tp_Badania;
     }
 }
 
