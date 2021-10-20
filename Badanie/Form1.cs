@@ -14,6 +14,7 @@ namespace Badanie
     {
         public Form1()
         {//
+            //
             InitializeComponent();
             Godzina();
             Dzien();
