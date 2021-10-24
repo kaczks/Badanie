@@ -36,12 +36,12 @@ namespace Badanie
                 }
             }
 
-            public bool pusty()  // sprawdz czy jest pusta
+            public bool pusty()  // sprawdz czy jest pusta (funkcja)
             {
                 return start == null;
             }
 
-            public string przod() // zwroc poczatek
+            public string przod() // zwroc poczatek (funkcja)
             {
                 if (start != null)
                 {
@@ -53,7 +53,7 @@ namespace Badanie
                 }
             }
 
-            public void Zapisz(string Kol) //zapisywanie do kolejki
+            public void Zapisz(string Kol) //zapisywanie do kolejki (funkcja)
             {
                 Kolejka k = new Kolejka();
                 k.next = null;
@@ -68,7 +68,7 @@ namespace Badanie
                 }
                 koniec = k;
             }
-            public void usun() //usuwanie z kolejki
+            public void usun() //usuwanie z kolejki (funkcja)
             {
                 if (start != null)
                 {
@@ -145,6 +145,7 @@ namespace Badanie
             Badanie_label.Text = pacjet.Nazwa_Badania;
             tp_Badania.Value = pacjet.Data_Badania;
 
+            //Zapisywanie do kolejki
             Badanie_kolejka.Zapisz(tbImie.Text);
             Badanie_kolejka.Zapisz(tbBadania.Text);
             Badanie_kolejka.Zapisz(tpData_Badania.Value.ToString());
@@ -154,6 +155,15 @@ namespace Badanie
         private void Dane_pacjeta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_wypisz_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i < 4; i++)
+            {
+                WypKol.Text += Badanie_kolejka.przod() + "\n";
+                Badanie_kolejka.usun();
+            }
         }
     }
 }

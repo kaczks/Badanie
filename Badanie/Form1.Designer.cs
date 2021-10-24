@@ -190,6 +190,7 @@ namespace Badanie
             this.btn_wypisz.TabIndex = 23;
             this.btn_wypisz.Text = "Wypisz w kolejce";
             this.btn_wypisz.UseVisualStyleBackColor = true;
+            this.btn_wypisz.Click += new System.EventHandler(this.btn_wypisz_Click);
             // 
             // WypKol
             // 
