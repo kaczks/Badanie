@@ -76,5 +76,10 @@ namespace Badanie
             
 
         }
+
+        private void Dane_pacjeta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
