@@ -95,9 +95,10 @@ namespace Badanie
             // 
             // tpData_Badania
             // 
+            this.tpData_Badania.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tpData_Badania.Location = new System.Drawing.Point(196, 193);
             this.tpData_Badania.Name = "tpData_Badania";
-            this.tpData_Badania.Size = new System.Drawing.Size(200, 23);
+            this.tpData_Badania.Size = new System.Drawing.Size(100, 23);
             this.tpData_Badania.TabIndex = 5;
             // 
             // tpAktualna_Data
@@ -161,7 +162,7 @@ namespace Badanie
             this.tp_Badania.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tp_Badania.Location = new System.Drawing.Point(573, 193);
             this.tp_Badania.Name = "tp_Badania";
-            this.tp_Badania.Size = new System.Drawing.Size(67, 23);
+            this.tp_Badania.Size = new System.Drawing.Size(87, 23);
             this.tp_Badania.TabIndex = 11;
             // 
             // Dane_pacjeta
