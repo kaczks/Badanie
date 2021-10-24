@@ -39,32 +39,32 @@ namespace Badanie
         {
 
         }
-        public void Godzina()
+        public void Godzina() // aktualna godzina
         {
             DateTime time = DateTime.Now;
             tpAktualna_Godzina.Format = DateTimePickerFormat.Custom;
             tpAktualna_Godzina.CustomFormat = "HH:mm";
             tpAktualna_Godzina.Value = time;
         }
-        public void Dzien()
+        public void Dzien() //aktualny dzien
         {
             DateTime thisDay = DateTime.Today;
             tpAktualna_Data.Value = thisDay;
         }
 
-        private void refresh_Tick(object sender, EventArgs e)
+        private void refresh_Tick(object sender, EventArgs e) //Daty
         {
             Godzina();
             Dzien();
         }
-        struct NFZ
+        struct NFZ // struktura
         {
             public string Imie;
             public string Nazwa_Badania;
             public DateTime Data_Badania;
         }
         NFZ pacjet;
-        private void btnDodaj_Click(object sender, EventArgs e)
+        private void btnDodaj_Click(object sender, EventArgs e) // Zapisywanie do struktury
         {
             pacjet.Imie = tbImie.Text;
             pacjet.Nazwa_Badania = tbBadania.Text;
@@ -76,6 +76,78 @@ namespace Badanie
             
 
         }
+
+        public class Kolejka //deklarownie kolejki
+        {
+            public Kolejka next;
+            public string komotka = "";
+        }
+
+        public class queue 
+        {
+            private Kolejka start;
+            private Kolejka koniec;
+
+            public queue() //konstruktor
+            {
+                start = koniec = null;
+            }
+
+            public void Des() //destruktor
+            {
+                while (start != null)
+                {
+                    usun();
+                }
+            }
+
+            public bool empty()  // sprawdz czy jest pusta
+            {
+                return start == null;
+            }
+
+            public string front() // zwroc poczatek
+            {
+                if(start != null)
+                {
+                    return start.komotka;
+                }
+                else
+                {
+                    return "Zle";
+                }
+            }
+
+            public void push(string Kol) //zapisywanie do kolejki
+            {
+                Kolejka k = new Kolejka();
+                k.next = null;
+                k.komotka = Kol;
+                if(koniec != null)
+                {
+                    koniec.next = k;
+                }
+                else
+                {
+                    start = k;
+                }
+                koniec = k;
+            }
+            public void usun() //usuwanie z kolejki
+            {
+                if(start !=null)
+                {
+                    Kolejka k = start;
+                    start = start.next;
+                    if(start == null)
+                    {
+                        koniec = null;
+                    }
+                    k = null;
+                }
+            }
+        }
+
 
         private void Dane_pacjeta_Click(object sender, EventArgs e)
         {

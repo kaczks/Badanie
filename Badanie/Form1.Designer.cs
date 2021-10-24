@@ -44,12 +44,9 @@ namespace Badanie
             this.Badanie_label = new System.Windows.Forms.Label();
             this.tp_Badania = new System.Windows.Forms.DateTimePicker();
             this.Dane_pacjeta = new System.Windows.Forms.Label();
-            this.LKolejny = new System.Windows.Forms.Label();
-            this.LTeraz = new System.Windows.Forms.Label();
-            this.LPoprzedni = new System.Windows.Forms.Label();
             this.lKolejka = new System.Windows.Forms.Label();
-            this.btn_nastepny = new System.Windows.Forms.Button();
-            this.btn_poprzedni = new System.Windows.Forms.Button();
+            this.btn_wypisz = new System.Windows.Forms.Button();
+            this.WypKol = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lImie
@@ -159,6 +156,7 @@ namespace Badanie
             // 
             // tp_Badania
             // 
+            this.tp_Badania.Enabled = false;
             this.tp_Badania.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tp_Badania.Location = new System.Drawing.Point(573, 193);
             this.tp_Badania.Name = "tp_Badania";
@@ -175,30 +173,6 @@ namespace Badanie
             this.Dane_pacjeta.Text = "Dane pacjeta dodanego do kolejki";
             this.Dane_pacjeta.Click += new System.EventHandler(this.Dane_pacjeta_Click);
             // 
-            // LKolejny
-            // 
-            this.LKolejny.AutoSize = true;
-            this.LKolejny.Location = new System.Drawing.Point(196, 358);
-            this.LKolejny.Name = "LKolejny";
-            this.LKolejny.Size = new System.Drawing.Size(0, 15);
-            this.LKolejny.TabIndex = 14;
-            // 
-            // LTeraz
-            // 
-            this.LTeraz.AutoSize = true;
-            this.LTeraz.Location = new System.Drawing.Point(303, 358);
-            this.LTeraz.Name = "LTeraz";
-            this.LTeraz.Size = new System.Drawing.Size(0, 15);
-            this.LTeraz.TabIndex = 16;
-            // 
-            // LPoprzedni
-            // 
-            this.LPoprzedni.AutoSize = true;
-            this.LPoprzedni.Location = new System.Drawing.Point(413, 358);
-            this.LPoprzedni.Name = "LPoprzedni";
-            this.LPoprzedni.Size = new System.Drawing.Size(0, 15);
-            this.LPoprzedni.TabIndex = 19;
-            // 
             // lKolejka
             // 
             this.lKolejka.AutoSize = true;
@@ -208,35 +182,31 @@ namespace Badanie
             this.lKolejka.TabIndex = 22;
             this.lKolejka.Text = "Kolejka";
             // 
-            // btn_nastepny
+            // btn_wypisz
             // 
-            this.btn_nastepny.Location = new System.Drawing.Point(196, 409);
-            this.btn_nastepny.Name = "btn_nastepny";
-            this.btn_nastepny.Size = new System.Drawing.Size(75, 23);
-            this.btn_nastepny.TabIndex = 23;
-            this.btn_nastepny.Text = "Next";
-            this.btn_nastepny.UseVisualStyleBackColor = true;
+            this.btn_wypisz.Location = new System.Drawing.Point(532, 261);
+            this.btn_wypisz.Name = "btn_wypisz";
+            this.btn_wypisz.Size = new System.Drawing.Size(170, 23);
+            this.btn_wypisz.TabIndex = 23;
+            this.btn_wypisz.Text = "Wypisz w kolejce";
+            this.btn_wypisz.UseVisualStyleBackColor = true;
             // 
-            // btn_poprzedni
+            // WypKol
             // 
-            this.btn_poprzedni.Location = new System.Drawing.Point(321, 409);
-            this.btn_poprzedni.Name = "btn_poprzedni";
-            this.btn_poprzedni.Size = new System.Drawing.Size(75, 23);
-            this.btn_poprzedni.TabIndex = 24;
-            this.btn_poprzedni.Text = "Previous";
-            this.btn_poprzedni.UseVisualStyleBackColor = true;
+            this.WypKol.AutoSize = true;
+            this.WypKol.Location = new System.Drawing.Point(267, 360);
+            this.WypKol.Name = "WypKol";
+            this.WypKol.Size = new System.Drawing.Size(0, 15);
+            this.WypKol.TabIndex = 24;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 534);
-            this.Controls.Add(this.btn_poprzedni);
-            this.Controls.Add(this.btn_nastepny);
+            this.Controls.Add(this.WypKol);
+            this.Controls.Add(this.btn_wypisz);
             this.Controls.Add(this.lKolejka);
-            this.Controls.Add(this.LPoprzedni);
-            this.Controls.Add(this.LTeraz);
-            this.Controls.Add(this.LKolejny);
             this.Controls.Add(this.Dane_pacjeta);
             this.Controls.Add(this.tp_Badania);
             this.Controls.Add(this.Badanie_label);
@@ -273,12 +243,9 @@ namespace Badanie
         private System.Windows.Forms.Label Badanie_label;
         private System.Windows.Forms.DateTimePicker tp_Badania;
         private System.Windows.Forms.Label Dane_pacjeta;
-        private System.Windows.Forms.Label LKolejny;
-        private System.Windows.Forms.Label LTeraz;
-        private System.Windows.Forms.Label LPoprzedni;
         private System.Windows.Forms.Label lKolejka;
-        private System.Windows.Forms.Button btn_nastepny;
-        private System.Windows.Forms.Button btn_poprzedni;
+        private System.Windows.Forms.Button btn_wypisz;
+        private System.Windows.Forms.Label WypKol;
     }
 }
 
