@@ -47,6 +47,7 @@ namespace Badanie
             this.lKolejka = new System.Windows.Forms.Label();
             this.btn_wypisz = new System.Windows.Forms.Button();
             this.WypKol = new System.Windows.Forms.Label();
+            this.Zapis_doP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lImie
@@ -200,11 +201,22 @@ namespace Badanie
             this.WypKol.Size = new System.Drawing.Size(0, 15);
             this.WypKol.TabIndex = 24;
             // 
+            // Zapis_doP
+            // 
+            this.Zapis_doP.Location = new System.Drawing.Point(758, 394);
+            this.Zapis_doP.Name = "Zapis_doP";
+            this.Zapis_doP.Size = new System.Drawing.Size(110, 23);
+            this.Zapis_doP.TabIndex = 25;
+            this.Zapis_doP.Text = "Zapisz do pliku";
+            this.Zapis_doP.UseVisualStyleBackColor = true;
+            this.Zapis_doP.Click += new System.EventHandler(this.Zapis_doP_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 534);
+            this.Controls.Add(this.Zapis_doP);
             this.Controls.Add(this.WypKol);
             this.Controls.Add(this.btn_wypisz);
             this.Controls.Add(this.lKolejka);
@@ -247,6 +259,7 @@ namespace Badanie
         private System.Windows.Forms.Label lKolejka;
         private System.Windows.Forms.Button btn_wypisz;
         private System.Windows.Forms.Label WypKol;
+        private System.Windows.Forms.Button Zapis_doP;
     }
 }
 

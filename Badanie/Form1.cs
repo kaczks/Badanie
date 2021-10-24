@@ -173,7 +173,7 @@ namespace Badanie
             }
         }
 
-        public void Plik(string[] args) //zapisywanie do pliku
+        public void Plik() //zapisywanie do pliku
         {
             string imie = druga_kolejka.przod();
             druga_kolejka.usun();
@@ -195,6 +195,11 @@ namespace Badanie
                 foreach (string line in wiersze)
                     outputFile.WriteLine(line);
             }
+        }
+
+        private void Zapis_doP_Click(object sender, EventArgs e)// Przycisk zapisujacy do pliku
+        {
+            Plik();
         }
     }
 
