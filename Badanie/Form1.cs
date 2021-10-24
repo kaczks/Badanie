@@ -12,6 +12,77 @@ namespace Badanie
 {
     public partial class Form1 : Form
     {
+        public class Kolejka //deklarownie kolejki
+        {
+            public Kolejka next;
+            public string komotka = "";
+        }
+
+        public class queue
+        {
+            private Kolejka start;
+            private Kolejka koniec;
+
+            public queue() //konstruktor
+            {
+                start = koniec = null;
+            }
+
+            public void Des() //destruktor
+            {
+                while (start != null)
+                {
+                    usun();
+                }
+            }
+
+            public bool pusty()  // sprawdz czy jest pusta
+            {
+                return start == null;
+            }
+
+            public string przod() // zwroc poczatek
+            {
+                if (start != null)
+                {
+                    return start.komotka;
+                }
+                else
+                {
+                    return "Zle";
+                }
+            }
+
+            public void Zapisz(string Kol) //zapisywanie do kolejki
+            {
+                Kolejka k = new Kolejka();
+                k.next = null;
+                k.komotka = Kol;
+                if (koniec != null)
+                {
+                    koniec.next = k;
+                }
+                else
+                {
+                    start = k;
+                }
+                koniec = k;
+            }
+            public void usun() //usuwanie z kolejki
+            {
+                if (start != null)
+                {
+                    Kolejka k = start;
+                    start = start.next;
+                    if (start == null)
+                    {
+                        koniec = null;
+                    }
+                    k = null;
+                }
+            }
+        }
+        private queue Badanie_kolejka = new queue();
         public Form1()
         {//
             ////
@@ -73,82 +144,13 @@ namespace Badanie
             Imie_label.Text = pacjet.Imie;
             Badanie_label.Text = pacjet.Nazwa_Badania;
             tp_Badania.Value = pacjet.Data_Badania;
-            
+
+            Badanie_kolejka.Zapisz(tbImie.Text);
+            Badanie_kolejka.Zapisz(tbBadania.Text);
+            Badanie_kolejka.Zapisz(tpData_Badania.Value.ToString());
+
 
         }
-
-        public class Kolejka //deklarownie kolejki
-        {
-            public Kolejka next;
-            public string komotka = "";
-        }
-
-        public class queue 
-        {
-            private Kolejka start;
-            private Kolejka koniec;
-
-            public queue() //konstruktor
-            {
-                start = koniec = null;
-            }
-
-            public void Des() //destruktor
-            {
-                while (start != null)
-                {
-                    usun();
-                }
-            }
-
-            public bool empty()  // sprawdz czy jest pusta
-            {
-                return start == null;
-            }
-
-            public string front() // zwroc poczatek
-            {
-                if(start != null)
-                {
-                    return start.komotka;
-                }
-                else
-                {
-                    return "Zle";
-                }
-            }
-
-            public void push(string Kol) //zapisywanie do kolejki
-            {
-                Kolejka k = new Kolejka();
-                k.next = null;
-                k.komotka = Kol;
-                if(koniec != null)
-                {
-                    koniec.next = k;
-                }
-                else
-                {
-                    start = k;
-                }
-                koniec = k;
-            }
-            public void usun() //usuwanie z kolejki
-            {
-                if(start !=null)
-                {
-                    Kolejka k = start;
-                    start = start.next;
-                    if(start == null)
-                    {
-                        koniec = null;
-                    }
-                    k = null;
-                }
-            }
-        }
-
-
         private void Dane_pacjeta_Click(object sender, EventArgs e)
         {
 
