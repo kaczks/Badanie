@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Badanie
 {
@@ -82,7 +83,9 @@ namespace Badanie
                 }
             }
         }
+        //deklaracja kolejki
         private queue Badanie_kolejka = new queue();
+        private queue druga_kolejka = new queue();
         public Form1()
         {//
             ////
@@ -150,6 +153,10 @@ namespace Badanie
             Badanie_kolejka.Zapisz(tbBadania.Text);
             Badanie_kolejka.Zapisz(tpData_Badania.Value.ToString());
 
+            //Zapisywnie do drugiej kolejki
+            druga_kolejka.Zapisz(tbImie.Text);
+            druga_kolejka.Zapisz(tbBadania.Text);
+            druga_kolejka.Zapisz(tpData_Badania.Value.ToString());
 
         }
         private void Dane_pacjeta_Click(object sender, EventArgs e)
@@ -157,7 +164,7 @@ namespace Badanie
 
         }
 
-        private void btn_wypisz_Click(object sender, EventArgs e)
+        private void btn_wypisz_Click(object sender, EventArgs e)//wypisywanie kolejki
         {
             for (int i = 1; i < 4; i++)
             {
@@ -165,5 +172,30 @@ namespace Badanie
                 Badanie_kolejka.usun();
             }
         }
+
+        public void Plik(string[] args) //zapisywanie do pliku
+        {
+            string imie = druga_kolejka.przod();
+            druga_kolejka.usun();
+            string badanie = druga_kolejka.przod();
+            druga_kolejka.usun();
+            string data = druga_kolejka.przod();
+            druga_kolejka.usun();
+
+            // Create a string array with the lines of text
+            string[] wiersze = { imie, badanie, data };
+
+            // Set a variable to the Documents path.
+            string docPath =
+              Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            // Write the string array to a new file named "WriteLines.txt".
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "Kolejka.txt")))
+            {
+                foreach (string line in wiersze)
+                    outputFile.WriteLine(line);
+            }
+        }
     }
+
 }
